@@ -11,13 +11,14 @@ import java.sql.*;
 @RestController
 public class GreetingController {
 
+	private static final String template 
 	Connection connection = getConnection();
 	Statement stmt = connection.createStatement();
 	ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
 	while (rs.next()) {
 		System.out.println("Read from DB: " + rs.getString(3));
-		private static final String template = rs.getString(3);
+		template = rs.getString(3);
 	}
 
 
