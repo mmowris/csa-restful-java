@@ -17,7 +17,7 @@ public class GreetingController {
 
 	while (rs.next()) {
 		System.out.println("Read from DB: " + rs.getString(3));
-		private static final String template = rs.getString(3));
+		private static final String template = rs.getString(3);
 	}
 
 
