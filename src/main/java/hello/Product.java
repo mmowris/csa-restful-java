@@ -3,18 +3,18 @@ package hello;
 public class Product {
 
     private final String name;
-    private final String acv;
+    private final String id;
 
-    public Product(String name, String acv) {
+    public Product(String name, String id) {
         this.name = name;
-        this.acv = acv;
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getAcv() {
-        return acv;
+    public String getId() {
+        return id;
     }
 }
