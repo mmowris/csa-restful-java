@@ -15,19 +15,19 @@ import java.net.URISyntaxException;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
 @RestController
-public class GreetingController {
+public class ProductController {
 
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
+	private static final String template = "Hello, %s!";
+	private final AtomicLong counter = new AtomicLong();
 
-    Connection connection = null;
-    connection = DatabaseUrl.extract().getConnection();
-    Statement stmt = connection.createStatement();
-    ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
+	Connection connection = null;
+	
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                            String.format(template, name));
-    }
+	@RequestMapping("/greeting")
+	public Product product() {
+		connection = DatabaseUrl.extract().getConnection();
+		Statement stmt = connection.createStatement();
+		ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
+		return new Product();
+	}
 }
