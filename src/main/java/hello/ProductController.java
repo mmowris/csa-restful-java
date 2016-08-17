@@ -21,13 +21,22 @@ public class ProductController {
 	private final AtomicLong counter = new AtomicLong();
 
 	Connection connection = null;
-	
 
-	@RequestMapping("/greeting")
-	public Product product() {
+
+	@RequestMapping("/greeting") -> {
+		ArrayList<String> output = new ArrayList<String>();
 		connection = DatabaseUrl.extract().getConnection();
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
-		return new Product();
+		while (rs.next()) {
+			output.add(new Product product(rs.getString(3), rs.getString(9)));
+
+		}
+		return output
 	}
+	
+	/*public Product product() {
+		
+		return new Product();
+	}*/
 }

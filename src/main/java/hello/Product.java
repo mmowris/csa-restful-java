@@ -2,19 +2,19 @@ package hello;
 
 public class Product {
 
-    private final long id;
-    private final String content;
+    private final String name;
+    private final String acv;
 
-    public Product(long id, String content) {
-        this.id = id;
-        this.content = content;
+    public Product(long name, String acv) {
+        this.name = name;
+        this.acv = acv;
     }
 
-    public long getId() {
-        return id;
+    public long getName() {
+        return name;
     }
 
-    public String getContent() {
-        return content;
+    public String getAcv() {
+        return acv;
     }
 }
