@@ -32,7 +32,8 @@ public class ProductController {
 		Statement stmt = connection.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 		while (rs.next()) {
-			output.add(new Product product(rs.getString(3), rs.getString(9)));
+			Product p = new Product(rs.getString(3), rs.getString(9));
+			output.add(p);
 
 		}
 		return output
