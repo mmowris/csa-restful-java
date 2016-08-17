@@ -56,11 +56,11 @@ public class ProductController {
 
 			connection = DatabaseUrl.extract().getConnection();
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"','" +productcode +"');");
+			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"'," + "'" +productcode +"');");
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
 			while (rs.next()) {
-				Product p = new Product(rs.getString(4), rs.getString(5));
+				Product p = new Product(rs.getString(4), rs.getString(10));
 				output.add(p);
 
 			}
