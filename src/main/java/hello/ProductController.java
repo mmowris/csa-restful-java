@@ -36,7 +36,7 @@ public class ProductController {
 			output.add(p);
 
 		}
-		return output
+		return output;
 	}
 	
 	/*public Product product() {
