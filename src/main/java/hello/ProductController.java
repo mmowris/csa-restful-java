@@ -27,19 +27,24 @@ public class ProductController {
 
 	@RequestMapping("/greeting")
 	public ArrayList<Product> func() {
-		ArrayList<Product> output = new ArrayList<Product>();
-		Connection connection = null;
+		try {
+			ArrayList<Product> output = new ArrayList<Product>();
+			Connection connection = null;
 
-		connection = DatabaseUrl.extract().getConnection();
-		Statement stmt = connection.createStatement();
-		ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
-		
-		while (rs.next()) {
-			Product p = new Product(rs.getString(3), rs.getString(9));
-			output.add(p);
+			connection = DatabaseUrl.extract().getConnection();
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
+			while (rs.next()) {
+				Product p = new Product(rs.getString(3), rs.getString(9));
+				output.add(p);
+
+			}
+
+			return output;
+		} catch(Exception e) {
+			
 		}
-
-		return output;
+		
 	}
 }
