@@ -48,7 +48,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/new")
-	public ArrayList<Product> newProduct() {
+	public ArrayList<Product> newProduct(@RequestParam("name") String name, @RequestParam("pc") String productcode) {
 
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
@@ -56,10 +56,6 @@ public class ProductController {
 
 			connection = DatabaseUrl.extract().getConnection();
 			Statement stmt = connection.createStatement();
-			String name = @RequestParam(value="name", defaultValue="NewProduct");
-			String productcode = @RequestParam(value="pc", defaultValue="0000");
-			//String name = "test";
-			//String productcode = "test";
 			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"','" +productcode +"');");
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
