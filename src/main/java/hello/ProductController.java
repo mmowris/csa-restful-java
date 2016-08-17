@@ -25,7 +25,7 @@ public class ProductController {
 	
 
 
-	@RequestMapping("/greeting")
+	@RequestMapping(value="/index", method=RequestMethod.GET)
 	public ArrayList<Product> func() {
 
 		try {
