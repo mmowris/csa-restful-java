@@ -48,7 +48,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/new")
-	public ArrayList<Product> listProducts() {
+	public ArrayList<Product> newProduct() {
 
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
