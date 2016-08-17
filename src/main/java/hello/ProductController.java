@@ -27,6 +27,7 @@ public class ProductController {
 
 	@RequestMapping("/greeting")
 	public ArrayList<Product> func() {
+
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
 			Connection connection = null;
@@ -43,8 +44,10 @@ public class ProductController {
 
 			return output;
 		} catch(Exception e) {
-			
+
 		}
+
+		return null;
 		
 	}
 }
