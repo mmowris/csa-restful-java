@@ -22,8 +22,11 @@ public class ProductController {
 
 	Connection connection = null;
 
+	
 
-	@RequestMapping("/greeting") -> {
+
+	@RequestMapping("/greeting")
+	public ArrayList<Product> func() {
 		ArrayList<String> output = new ArrayList<String>();
 		connection = DatabaseUrl.extract().getConnection();
 		Statement stmt = connection.createStatement();
