@@ -49,7 +49,7 @@ public class ProductController {
 		
 	}
 
-	@RequestMapping("/new")
+	@RequestMapping("/api/v1/product")
 	public ArrayList<Product> newProduct(@RequestParam("name") String name, @RequestParam("pc") String productcode) {
 
 		try {
