@@ -34,7 +34,9 @@ public class ProductController {
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
 			while (rs.next()) {
-				Product p = new Product(rs.getString(4), rs.getString(10));
+				System.out.println(rs.getString(10));
+				System.out.println("HELLO");
+				Product p = new Product(rs.getString(10), rs.getString(6));
 				output.add(p);
 
 			}
@@ -61,7 +63,7 @@ public class ProductController {
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
 			while (rs.next()) {
-				Product p = new Product(rs.getString(4), rs.getString(10));
+				Product p = new Product(rs.getString(10), rs.getString(6));
 				output.add(p);
 
 			}
