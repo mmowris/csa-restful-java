@@ -59,7 +59,7 @@ public class ProductController {
 			connection = DatabaseUrl.extract().getConnection();
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"'," + "'" +productcode +"');");
-			ResultSet rs = stmt.executeQuery("SELECT product2.name, product2.productcode FROM salesforce.product2 LIMIT 10");
+			ResultSet rs = stmt.executeQuery("SELECT product2.name, product2.productcode FROM salesforce.product2 WHERE product2.name ='"+name+"'");
 
 			while (rs.next()) {
 				Product p = new Product(rs.getString(1), rs.getString(2));
