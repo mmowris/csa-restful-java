@@ -20,7 +20,7 @@
             <version>2.5.0</version>
         </dependency> 
         <dependency>
-            <groupId>postgresql</groupId>
+            <groupId>com.heroku.sdk</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1208</version>
         </dependency>
