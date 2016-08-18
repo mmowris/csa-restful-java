@@ -32,10 +32,10 @@ public class ProductController {
 
 			Statement stmt = connection.createStatement();
 
-			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
+			ResultSet rs = stmt.executeQuery("SELECT Nname, productcode FROM salesforce.product2");
 
 			while (rs.next()) {
-				Product p = new Product(rs.getString(11), rs.getString(7));
+				Product p = new Product(rs.getString(1), rs.getString(2));
 				output.add(p);
 
 			}
@@ -59,10 +59,10 @@ public class ProductController {
 			connection = DatabaseUrl.extract().getConnection();
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"'," + "'" +productcode +"');");
-			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
+			ResultSet rs = stmt.executeQuery("SELECT name, productcode FROM salesforce.product2");
 
 			while (rs.next()) {
-				Product p = new Product(rs.getString(11), rs.getString(7));
+				Product p = new Product(rs.getString(1), rs.getString(2));
 				output.add(p);
 
 			}
