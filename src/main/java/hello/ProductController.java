@@ -42,7 +42,7 @@ public class ProductController {
 
 			return output;
 		} catch(Exception e) {
-
+			System.out.println("ERRRRRORRRRRRR");
 		}
 
 		return null;
