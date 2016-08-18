@@ -27,8 +27,9 @@ public class ProductController {
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
 			Connection connection = null;
+			URI dbUri = new URI(System.getenv("HEROKU_POSTGRESQL_OLIVE_URL"));
 
-			connection = DatabaseUrl.extract().getConnection();
+			connection = dbUri;
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
@@ -53,8 +54,9 @@ public class ProductController {
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
 			Connection connection = null;
+			URI dbUri = new URI(System.getenv("HEROKU_POSTGRESQL_OLIVE_URL"));
 
-			connection = DatabaseUrl.extract().getConnection();
+			connection = dbUri;
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"'," + "'" +productcode +"');");
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
