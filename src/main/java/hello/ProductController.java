@@ -55,7 +55,7 @@ public class ProductController {
 			ArrayList<Product> output = new ArrayList<Product>();
 			Connection connection = null;
 			URI dbUri = new URI(System.getenv("HEROKU_POSTGRESQL_OLIVE_URL"));
-
+			/* test */
 			connection = dbUri;
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO salesforce.product2 (name, productcode) VALUES ('" + name +"'," + "'" +productcode +"');");
