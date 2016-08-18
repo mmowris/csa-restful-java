@@ -29,7 +29,9 @@ public class ProductController {
 			
 
 			connection = DatabaseUrl.extract().getConnection();
+
 			Statement stmt = connection.createStatement();
+
 			ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.product2");
 
 			while (rs.next()) {
@@ -42,7 +44,7 @@ public class ProductController {
 
 			return output;
 		} catch(Exception e) {
-			System.out.println("ERRRRRORRRRRRR");
+			System.out.println("ERRRRRORRRRRRR",e);
 		}
 
 		return null;
