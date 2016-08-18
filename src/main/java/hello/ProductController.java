@@ -20,7 +20,7 @@ public class ProductController {
 	private final AtomicLong counter = new AtomicLong();
 
 	/* GET Function */
-	@RequestMapping("/index")
+	@RequestMapping("/api/v1/product")
 	public ArrayList<Product> listProducts() {
 		System.out.println("HELLO");
 		try {
