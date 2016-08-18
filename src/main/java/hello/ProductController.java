@@ -8,7 +8,6 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
-import java.sql.Connection;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -23,7 +22,7 @@ public class ProductController {
 	/* GET Function */
 	@RequestMapping("/index")
 	public ArrayList<Product> listProducts() {
-
+		System.out.println("HELLO");
 		try {
 			ArrayList<Product> output = new ArrayList<Product>();
 			Connection connection = null;
