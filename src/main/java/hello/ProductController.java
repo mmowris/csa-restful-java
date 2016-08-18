@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
-import java.sql.Connection
+import java.sql.Connection;
 import java.net.URI;
 import java.net.URISyntaxException;
 
